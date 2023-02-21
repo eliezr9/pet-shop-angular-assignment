@@ -1,0 +1,35 @@
+<h2>Add pet</h2>
+<div>
+  <div>
+    <label for="new-pet-name">Name: </label>
+    <input id="new-pet-name" type="text" required max="25" #petName />
+    <!-- <div [hidden]="type.valid || type.pristine" class="alert alert-danger">
+        Type is required
+      </div> -->
+  </div>
+
+  <div>
+    <label for="new-pet-age">Age: </label>
+    <input id="new-pet-age" type="number" required min="0" #petAge />
+  </div>
+
+  <div>
+    <label for="new-pet-type">Type:</label>
+    <select id="new-pet-type" required name="type"  #petType>
+      <option *ngFor="let type of types" [value]="type">{{type}}</option>
+    </select>
+  </div>
+
+  <div>
+    <input type="radio" id="new-pet-color-choice1" #petColor name="new-pet-color" value="white" />
+    <label for="new-pet-color-choice1">White</label>
+
+    <input type="radio" id="new-pet-color-choice2" #petColor name="new-pet-color" value="black" />
+    <label for="new-pet-color-choice2">Black</label>
+  </div>
+
+  <button type="button" class="add-button" (click)="add(petName.value, petAge.value, petType.value, petColor.value);
+  petName.value=''; petAge.value=''; petType.value=''; petColor.value='';">
+    Add pet
+  </button>
+</div>

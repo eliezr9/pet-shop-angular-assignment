@@ -1,0 +1,13 @@
+<h2>The pets</h2>
+<ul>
+  <li *ngFor="let pet of pets">
+    <div>
+      <div><span>id: </span>{{pet.id}}</div>
+      <div><span>name: </span>{{pet.name}}</div>
+      <div><span>age: </span>{{pet.age}}</div>
+      <div><span>type: </span>{{pet.type}}</div>
+      <div *ngIf="pet.color"><span>color: </span>White</div>
+      <div *ngIf="!pet.color"><span>color: </span>Black</div>
+    </div>
+  </li>
+</ul>
